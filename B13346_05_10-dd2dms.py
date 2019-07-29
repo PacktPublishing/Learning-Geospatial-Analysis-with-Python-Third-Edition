@@ -19,9 +19,15 @@ def dd2dms(lat, lon):
         return '{}º {}\' {:.2f}" {}, {}º {}\' {:.2f}" {}'.format(abs(latd), 
         	abs(latm), abs(lats), lat_compass, abs(lond), 
         	abs(lonm), abs(lons), lon_compass)
-
-def dms2dd(degrees, minutes, seconds, direction):
-    dd = float(degrees) + float(minutes)/60 + float(seconds)/(60*60);
-    if direction == 'E' or direction == 'N':
-        dd *= -1
-    return dd;
+    
+def dms2dd(lat, lon):
+    lat_deg, lat_min, lat_sec, lat_dir = re.split('[^\d\.A-Z]+', lat)
+    lon_deg, lon_min, lon_sec, lon_dir = re.split('[^\d\.A-Z]+', lon)
+    lat_dd = float(lat_deg) + float(lat_min)/60 + float(lat_sec)/(60*60);
+    lon_dd = float(lon_deg) + float(lon_min)/60 + float(lon_sec)/(60*60);
+    if lat_dir == 'S':
+        lat_dd *= -1
+    if lon_dir == 'W':
+        lon_dd *= -1
+    return (lat_dd, lon_dd);
+    
