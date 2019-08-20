@@ -29,4 +29,5 @@ def dms2dd(lat, lon):
         lat_dd *= -1
     if lon_dir == 'W':
         lon_dd *= -1
-    return (lat_dd, lon_dd)
+    return (lat_dd, lon_dd);
+    
