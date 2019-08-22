@@ -2,7 +2,7 @@
 
 # https://github.com/GeospatialPython/Learning/raw/master/polygon.zip
 
-from osgeo import ogr
+import ogr
 shape = ogr.Open("polygon.shp")
 layer = shape.GetLayer()
 feature = layer.GetNextFeature()

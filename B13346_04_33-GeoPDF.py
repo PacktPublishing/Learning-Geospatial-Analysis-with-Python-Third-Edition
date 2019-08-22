@@ -31,13 +31,13 @@ miny = 90
 maxy = -90
 for x, y in state[POINTS]:
 if x < minx:
-minx = x
+    minx = x
 elif x > maxx:
-maxx = x
+    maxx = x
 if y < miny:
-miny = y
+    miny = y
 elif y > maxy:
-maxy = y
+    maxy = y
 # Get earth distance on each axis
 dist_x = maxx - minx
 dist_y = maxy - miny
@@ -46,16 +46,16 @@ dist_y = maxy - miny
 x_ratio = map_width / dist_x
 y_ratio = map_height / dist_y
 def convert(point):
-"""Convert lat/lon to screen coordinates"""
-lon = point[0]
-lat = point[1]
-x = map_width - ((maxx - lon) * x_ratio)
-y = map_height - ((maxy - lat) * y_ratio)
-# Python turtle graphics start in the middle of the screen
-# so we must offset the points so they are centered
-x = x + 100
-y = y + 400
-return [x, y]
+    """Convert lat/lon to screen coordinates"""
+    lon = point[0]
+    lat = point[1]
+    x = map_width - ((maxx - lon) * x_ratio)
+    y = map_height - ((maxy - lat) * y_ratio)
+    # Python turtle graphics start in the middle of the screen
+    # so we must offset the points so they are centered
+    x = x + 100
+    y = y + 400
+    return [x, y]
 # Set up our map labels
 canvas.setFont("Helvetica", 20)
 canvas.drawString(250, 500, "COLORADO")

@@ -2,7 +2,7 @@
 
 # https://github.com/GeospatialPython/Learning/raw/master/point.zip
 
-from osgeo import ogr
+import ogr
 shp = ogr.Open("point.shp")
 layer = shp.GetLayer()
 feature = layer.GetNextFeature()
