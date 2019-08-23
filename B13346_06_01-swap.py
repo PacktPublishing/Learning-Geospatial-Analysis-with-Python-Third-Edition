@@ -2,7 +2,7 @@
 
 # http://git.io/vqs41
 
-from osgeo import gdal_array
+from gdal import gdal_array
 
 # name of our source image
 src = "FalseColor.tif"

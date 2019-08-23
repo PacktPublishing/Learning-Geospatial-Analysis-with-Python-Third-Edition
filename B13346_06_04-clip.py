@@ -3,7 +3,8 @@
 # http://git.io/vqsRH
 
 import operator
-from osgeo import gdal, gdal_array, osr
+import gdal
+from gdal import gdal_array, osr
 import shapefile
 try:
     import Image

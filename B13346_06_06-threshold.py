@@ -2,7 +2,7 @@
 
 # http://git.io/vqarj
 
-from osgeo import gdal_array
+from gdal import gdal_array
 
 # Input file name (thermal image)
 src = "islands.tif"

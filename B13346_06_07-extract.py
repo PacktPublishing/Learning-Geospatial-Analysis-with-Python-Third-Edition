@@ -2,7 +2,8 @@
 
 # https://github.com/GeospatialPython/Learn/raw/master/islands.zip
 
-from osgeo import gdal, ogr, osr
+import gdal
+from gdal import ogr, osr
 
 # Thresholded input raster name
 src = "islands_classified.tiff"

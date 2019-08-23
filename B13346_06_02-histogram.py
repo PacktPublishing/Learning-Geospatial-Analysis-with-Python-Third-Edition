@@ -3,7 +3,7 @@
 # http://git.io/vqs41
 # uses output from swap-bands.py script
 
-from osgeo import gdal_array
+from gdal import gdal_array
 import turtle as t
 
 

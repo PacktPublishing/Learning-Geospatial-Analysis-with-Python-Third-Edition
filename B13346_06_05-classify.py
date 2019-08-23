@@ -2,7 +2,7 @@
 
 # https://github.com/GeospatialPython/Learn/raw/master/thermal.zip
 
-from osgeo import gdal_array
+from gdal import gdal_array
 
 # Input file name (thermal image)
 src = "thermal.tif"

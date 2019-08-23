@@ -4,7 +4,8 @@
 # Before image: http://git.io/vqa6h
 # After image: http://git.io/vqaic
 
-from osgeo import gdal, gdal_array
+import gdal
+from gdal import gdal_array
 import numpy as np
 
 # "Before" image
