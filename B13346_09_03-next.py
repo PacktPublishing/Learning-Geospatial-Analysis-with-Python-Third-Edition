@@ -58,7 +58,7 @@ agency = "roosevelt"
 route = "shuttle"
 
 # NOAA OpenStreetMap WMS service
-basemap = "http://osm.woc.noaa.gov/mapcache"
+basemap = "http://ows.mundialis.de/services/service"
 
 # Name of the WMS street layer
 streets = "osm"

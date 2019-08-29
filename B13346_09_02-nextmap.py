@@ -34,18 +34,21 @@ def nextmap(a, r, mapimg):
     lat, lon = nextbus(a, r)
     if not lat:
         return False
-    # Base url + service path
-    osmapi = "http://staticmap.openstreetmap.de/staticmap.php?"
-    # Center the map around the bus location
-    osmapi += "center={},{}&".format(lat, lon)
-    # Set the zoom level (between 1-18, higher=lower scale)
-    osmapi += "zoom=18&"
-    # Set the map image size
-    osmapi += "&size=1500x1000&"
-    # Use the mapnik rendering image
-    osmapi += "maptype=osmarenderer&"
+
+    osmapi = "https://www.mapquestapi.com/staticmap/v4/getmap?type=map&"
     # Use a red, pushpin marker to pin point the bus
-    osmapi += "markers={},{},red-pushpin".format(lat, lon)
+     osmapi += "mcenter={},{}|&".format(lat, lon)
+    # Set the zoom level (between 1-18, higher=lower scale)
+     osmapi += "zoom=18&"
+    # Center the map around the bus location
+     osmapi += "center={},{}&".format(lat, lon)
+    # Set the map image size
+     osmapi += "&size=1500,1000"
+    # Add our API key
+    osmapi += "&key=YOUR_API_KEY_HERE"
+     
+
+    # Request the static map
     img = urllib.request.urlopen(osmapi)
     # Save the map image
     with open("{}.png".format(mapimg), "wb") as f:
