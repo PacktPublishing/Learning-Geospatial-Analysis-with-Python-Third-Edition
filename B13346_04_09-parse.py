@@ -1,6 +1,6 @@
 # Parse KML and count placemarks
 
-# http://kml-samples.googlecode.com/svn/trunk/kml/time/time-stamp-point.kml
+# https://github.com/GeospatialPython/Learn/raw/master/time-stamp-point.kml
 
 from xml.dom import minidom
 kml = minidom.parse("time-stamp-point.kml")

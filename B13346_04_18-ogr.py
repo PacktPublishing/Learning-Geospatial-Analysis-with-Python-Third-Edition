@@ -1,15 +1,12 @@
-# Convert a shapefile to WKT using ogr
+# Examine a shapefile with ogr
 
-# https://github.com/GeospatialPython/Learning/raw/master/polygon.zip
+# https://github.com/GeospatialPython/Learning/raw/master/point.zip
 
 import ogr
-shape = ogr.Open("polygon.shp")
-layer = shape.GetLayer()
+shp = ogr.Open("point.shp")
+layer = shp.GetLayer()
 feature = layer.GetNextFeature()
-geom = feature.GetGeometryRef()
-wkt = geom.ExportToWkt()
-# View the WKT
-print(wkt)
-# Ingest the WKT we made and check the envelope
-poly = ogr.CreateGeometryFromWkt(wkt)
-print(poly.GetEnvelope())
+while feature:
+    geometry = feature.GetGeometryRef()
+    print(geometry.GetX(), geometry.GetY(), feature.GetField("FIRST_FLD"))
+    feature = layer.GetNextFeature()
