@@ -14,19 +14,19 @@ cur.close()
 
 conn.close()
 
-conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='spatial_db')
+conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='jl061497', db='spatial_db')
 
 cur = conn.cursor()
 
 cur.execute("CREATE TABLE PLACES (id int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name varchar(50) NOT NULL, location Geometry NOT NULL)")
 
-cur.execute("INSERT INTO PLACES (name, location) VALUES ('NEW ORLEANS', GeomFromText('POINT(30.03 90.03)'))")
+cur.execute("INSERT INTO PLACES (name, location) VALUES ('NEW ORLEANS', ST_GeomFromText('POINT(30.03 90.03)'))")
 
-cur.execute("INSERT INTO PLACES (name, location) VALUES ('MEMPHIS', GeomFromText('POINT(35.05 90.00)'))")
+cur.execute("INSERT INTO PLACES (name, location) VALUES ('MEMPHIS', ST_GeomFromText('POINT(35.05 90.00)'))")
 
 conn.commit()
 
-cur.execute("SELECT AsText(location) FROM PLACES")
+cur.execute("SELECT ST_AsText(location) FROM PLACES")
 
 p1, p2 = [p[0] for p in cur.fetchall()]
 
