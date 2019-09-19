@@ -53,9 +53,9 @@ start = r.shape(0).points[0]
 end = r.shape(1).points[0]
 
 # Calculate the length of each element of the graph
-for n0, n1 in sg.edges_iter():
+for n0, n1 in sg.edges():
   dist = haversine(n0, n1)
-  sg.edge[n0][n1]["dist"] = dist
+  sg.edges[n0, n1]["dist"] = dist
 
 nn_start = None
 nn_end = None
@@ -79,8 +79,8 @@ for n in sg.nodes():
 path = nx.shortest_path(sg, source=nn_start, target=nn_end, weight="dist")
 
 # save the route as a shapefile
-w = shapefile.Writer(shapefile.POLYLINE)
+w = shapefile.Writer(os.path.join(savedir, "route"), shapefile.POLYLINE)
 w.field("NAME", "C", 40)
-w.line(parts=[[list(p) for p in path]])
+w.line([[list(p) for p in path]])
 w.record("route")
-w.save(os.path.join(savedir, "route"))
+w.close()

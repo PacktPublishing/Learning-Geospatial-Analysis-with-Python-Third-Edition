@@ -20,7 +20,7 @@ import shapefile
 # laspy for Python 3: pip install http://git.io/vOER9
 from laspy.file import File
 
-# voronoi.py for Python 3: pip install http://git.io/vOEuJ
+# voronoi.py for Python 3: pip install https://git.io/Je3qu
 import voronoi
 
 # Source LAS file

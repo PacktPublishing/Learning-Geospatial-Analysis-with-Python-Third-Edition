@@ -41,14 +41,14 @@ cols = int(xdist) / cell
 # Number of rows for our grid
 rows = int(ydist) / cell
 
-cols += 1
-rows += 1
+cols = int(cols + 1)
+rows = int(rows + 1)
 
 # Track how many elevation
 # values we aggregate
-count = np.zeros((rows, cols)).astype(np.float32)
+count = np.zeros((rows, cols), dtype=float)
 # Aggregate elevation values
-zsum = np.zeros((rows, cols)).astype(np.float32)
+zsum = np.zeros((rows, cols), dtype=float)
 
 # Y resolution is negative
 ycell = -1 * cell
