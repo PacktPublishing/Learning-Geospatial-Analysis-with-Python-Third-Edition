@@ -13,13 +13,15 @@ try:
 except:
     from PIL import Image, ImageDraw
 
+# Supress GDAL warnings
+gdal.PushErrorHandler('CPLQuietErrorHandler')
 
 def imageToArray(i):
     """
     Converts a Python Imaging Library
     array to a gdal_array image.
     """
-    a = gdal_array.numpy.fromstring(i.tostring(), 'b')
+    a = gdal_array.numpy.fromstring(i.tobytes(), 'b')
     a.shape = i.im.size[1], i.im.size[0]
     return a
 
@@ -44,7 +46,7 @@ def world2Pixel(geoMatrix, x, y):
 def copy_geo(array, prototype=None, xoffset=0, yoffset=0):
     """Copy geotransfrom from prototype dataset to array but account
     for x, y offset of clipped array."""
-    ds = gdal.Open(gdal_array.GetArrayFilename(array))
+    ds = gdal_array.OpenArray(array)
     prototype = gdal.Open(prototype)
     gdal_array.CopyDatasetInfo(prototype, ds,
                                xoff=xoffset, yoff=yoffset)

@@ -108,6 +108,5 @@ for s in inShp.iterShapes():
     c.polyline(pixels)
 
 # Save the image
-img = open("DotDensity.png", "wb")
-img.write(c.dump())
-img.close()
+with open("DotDensity.png", "wb") as img:
+    img.write(c.dump())

@@ -61,13 +61,13 @@ route = "shuttle"
 basemap = "http://ows.mundialis.de/services/service"
 
 # Name of the WMS street layer
-streets = "osm"
+streets = "TOPO-OSM-WMS"
 
 # Name of the basemap image to save
 mapimg = "basemap"
 
 # OpenWeatherMap.org WMS Service
-weather = "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi"
+weather = "https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0q.cgi?"
 
 # If the sky is clear over New York,
 # use the following url which contains
@@ -75,7 +75,7 @@ weather = "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi"
 # weather = "http://git.io/vl4r1"
 
 # WMS weather layer
-weather_layer = "nexrad-n0r"
+weather_layer = "nexrad-n0q-900913"
 
 # Name of the weather image to save
 skyimg = "weather"
@@ -112,7 +112,7 @@ lat = float(lat)
 lon = float(lon)
 
 # Convert the degrees to Web Mercator
-# to match the NOAA OSM WMS map
+# to match the WMS map
 x, y = ll2m(lon, lat)
 
 # Create a bounding box 1600 meters
@@ -130,15 +130,10 @@ wms(minx, miny, maxx, maxy, basemap, streets, mapimg, w, h)
 wms(minx, miny, maxx, maxy, weather, weather_layer, skyimg, w, h)
 
 # Open the basemap image in PIL
-im1 = Image.open("basemap.png")
+im1 = Image.open("basemap.png").convert('RGBA')
 
 # Open the weather image in PIL
-im2 = Image.open("weather.png")
-
-# Convert the weather image mode
-# to "RGB" from an indexed PNG
-# so it matches the basemap image
-im2 = im2.convert(im1.mode)
+im2 = Image.open("weather.png").convert('RGBA')
 
 # Create a blended image combining
 # the base map with the weather map

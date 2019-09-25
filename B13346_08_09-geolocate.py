@@ -75,9 +75,8 @@ for f in files:
 
 # Build a point shapefile with photo
 # filename as an attribute
-w = shapefile.Writer(shapefile.POINT)
-w.field("NAME", "C", 80)
-for f, coords in photos.items():
-    w.point(*coords)
-    w.record(f)
-w.save("photos")
+with shapefile.Writer("photos", shapefile.POINT) as w:
+    w.field("NAME", "C", 80)
+    for f, coords in photos.items():
+        w.point(*coords)
+        w.record(f)

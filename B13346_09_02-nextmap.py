@@ -37,13 +37,13 @@ def nextmap(a, r, mapimg):
 
     osmapi = "https://www.mapquestapi.com/staticmap/v4/getmap?type=map&"
     # Use a red, pushpin marker to pin point the bus
-     osmapi += "mcenter={},{}|&".format(lat, lon)
+    osmapi += "mcenter={},{}&".format(lat, lon)
     # Set the zoom level (between 1-18, higher=lower scale)
-     osmapi += "zoom=18&"
+    osmapi += "zoom=18&"
     # Center the map around the bus location
-     osmapi += "center={},{}&".format(lat, lon)
+    osmapi += "center={},{}&".format(lat, lon)
     # Set the map image size
-     osmapi += "&size=1500,1000"
+    osmapi += "&size=1500,1000"
     # Add our API key
     osmapi += "&key=YOUR_API_KEY_HERE"
      

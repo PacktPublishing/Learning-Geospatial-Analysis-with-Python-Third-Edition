@@ -5,11 +5,13 @@
 import glob
 import shapefile
 files = glob.glob("footprints_*shp")
-w = shapefile.Writer()
-r = None
-for f in files:
-    r = shapefile.Reader(f)
-    w._shapes.extend(r.shapes())
-    w.records.extend(r.records())
-w.fields = list(r.fields)
-w.save("Merged")
+with shapefile.Writer("Merged") as w:
+    r = None
+    for f in files:
+        r = shapefile.Reader(f)
+        if not w.fields:
+            w.fields = list(r.fields)
+        for rec in r.records():
+            w.record(*list(rec))
+        for s in r.shapes():
+            w._shapeparts(parts=[s.points], shapeType=s.shapeType)

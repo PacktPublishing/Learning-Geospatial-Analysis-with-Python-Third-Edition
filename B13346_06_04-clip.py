@@ -24,7 +24,7 @@ def imageToArray(i):
     """
     Converts a Python Imaging Library array to a gdal_array image.
     """
-    a = gdal_array.numpy.fromstring(i.tostring(), 'b')
+    a = gdal_array.numpy.fromstring(i.tobytes(), 'b')
     a.shape = i.im.size[1], i.im.size[0]
     return a
 
