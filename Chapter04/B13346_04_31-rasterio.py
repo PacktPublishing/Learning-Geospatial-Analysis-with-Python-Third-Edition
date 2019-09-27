@@ -1,6 +1,6 @@
 import rasterio
 ds = rasterio.open("SatImage.tif")
-ds.name
-ds.count
-ds.width
-ds.height
+print(ds.name)
+print(ds.count)
+print(ds.width)
+print(ds.height)

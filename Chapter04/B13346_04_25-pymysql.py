@@ -14,7 +14,7 @@ cur.close()
 
 conn.close()
 
-conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='jl061497', db='spatial_db')
+conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='spatial_db')
 
 cur = conn.cursor()
 

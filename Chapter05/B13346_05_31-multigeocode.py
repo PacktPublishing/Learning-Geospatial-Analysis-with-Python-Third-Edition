@@ -30,6 +30,9 @@ results = pool.map(gcode, cities)
 # Now print the results
 print(results)
 
+if __name__ == '__main__':
+    mp.freeze_support()
+
 # [Location(New Orleans, Orleans Parish, Louisiana, USA, (29.9499323, -90.0701156, 0.0)), 
 # Location(Biloxi, Harrison County, Mississippi, USA, (30.374673, -88.8459433348286, 0.0)), 
 # Location(Memphis, Shelby County, Tennessee, USA, (35.1490215, -90.0516285, 0.0)), 

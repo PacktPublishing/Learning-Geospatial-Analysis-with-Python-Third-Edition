@@ -72,7 +72,7 @@ for i, f in enumerate(inShp.fields):
     if f[0] == "POPULAT11":
         # Account for deletion flag
         pop_index = i-1
-
+        
 # Calculate the density and plot points
 for sr in inShp.shapeRecords():
     population = sr.record[pop_index]
@@ -81,13 +81,13 @@ for sr in inShp.shapeRecords():
     found = 0
     # Randomly distribute points until we
     # have the correct density
-    while found < density:
+    while found < int(density):
         minx, miny, maxx, maxy = sr.shape.bbox
         x = random.uniform(minx, maxx)
         y = random.uniform(miny, maxy)
-    if point_in_poly(x, y, sr.shape.points):
-        dots.append((x, y))
-        found += 1
+        if point_in_poly(x, y, sr.shape.points):  
+            dots.append((x, y))
+            found += 1
 
 # Set up the PNG output image
 c = pngcanvas.PNGCanvas(iwidth, iheight)
