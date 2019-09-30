@@ -4,20 +4,20 @@
 
 This is the code repository for [Learning Geospatial Analysis with Python - Third Edition ](https://www.packtpub.com/programming/learning-geospatial-analysis-with-python-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789959277), published by Packt.
 
-**Understand GIS fundamentals and perform remote sensing data analysis using Python 3.7	**
+**Understand GIS fundamentals and perform remote sensing data analysis using Python 3.7**
 
 ## What is this book about?
 Geospatial analysis is used in almost every domain you can think of, including defense, farming, and even medicine. With this systematic guide, you'll get started with geographic information system (GIS) and remote sensing analysis using the latest features in Python.
 
 
 This book covers the following exciting features:
-Automate geospatial analysis workflows using Python 
-Code the simplest possible GIS in just 60 lines of Python 
-Create thematic maps with Python tools such as PyShp, OGR, and the Python Imaging Library 
-Understand the different formats that geospatial data comes in 
-Produce elevation contours using Python tools 
-Create flood inundation models 
-Apply geospatial analysis to real-time data tracking and storm chasing
+* Automate geospatial analysis workflows using Python 
+* Code the simplest possible GIS in just 60 lines of Python 
+* Create thematic maps with Python tools such as PyShp, OGR, and the Python Imaging Library 
+* Understand the different formats that geospatial data comes in 
+* Produce elevation contours using Python tools 
+* Create flood inundation models 
+* Apply geospatial analysis to real-time data tracking and storm chasing
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789959276) today!
 
