@@ -41,7 +41,7 @@ With the following software and hardware list you can run all code files present
 ### Software and Hardware List
 | No | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
-| 1 | Python 3.7+ | 300-MHz processor, 128 MB of RAM, 1.5 GB of available hard disk |
+| 1 | Python 3.7+ | Windows, Linux, macOS |
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781789959277_ColorImages.pdf).
 
