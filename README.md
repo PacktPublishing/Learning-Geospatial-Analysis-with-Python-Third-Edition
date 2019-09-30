@@ -37,7 +37,7 @@ fileName = "21415_from_20070727_08_55_15_tides.txt"
 **Following is what you need for this book:**
 This book is for Python developers, researchers, or analysts who want to perform geospatial modeling and GIS analysis with Python. Basic knowledge of digital mapping and analysis using Python or other scripting languages will be helpful.	
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-).
+With the following software and hardware list you can run all code files present in the book (Chapter01-10).
 ### Software and Hardware List
 | No | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
