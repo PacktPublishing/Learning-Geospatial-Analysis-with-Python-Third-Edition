@@ -14,6 +14,8 @@ tgtName = "NYC_MUSEUMS_GEO.shp"
 # Target spatial reference
 tgt_spatRef = osr.SpatialReference()
 tgt_spatRef.ImportFromEPSG(4326)
+# Account for the flipped axis change in the latest GDAL
+tgt_spatRef.SetAxisMappingStrategy(0)
 
 # Source shapefile
 driver = ogr.GetDriverByName("ESRI Shapefile")
